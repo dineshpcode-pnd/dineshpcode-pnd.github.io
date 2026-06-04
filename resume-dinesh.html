@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh_Pachiappan_Executive_Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #111827;   /* Obsidian Executive Black */
+            --accent: #1e40af;    /* Premium Classic Navy Blue */
+            --text: #2d3748;      /* High-End Charcoal */
+            --muted: #4a5568;     /* Slate Gray */
+            --border: #cbd5e1;    /* Clean Divider Line */
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: var(--text); line-height: 1.5; padding: 20px 0; }
+        
+        .resume-container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px 45px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Luxury Header */
+        header { text-align: center; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--primary); }
+        h1 { font-size: 30px; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; text-transform: uppercase; margin-bottom: 3px; }
+        .subtitle { font-size: 13px; font-weight: 700; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+        .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; font-size: 13.5px; color: var(--muted); font-weight: 500; }
+        
+        /* Precision Section Spacing to Enforce 2 Pages */
+        section { margin-bottom: 18px; width: 100%; }
+        h2 { font-size: 14px; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; padding-bottom: 4px; margin-bottom: 10px; border-bottom: 1.5px solid var(--border); }
+        
+        p.summary-text { font-size: 13.5px; text-align: justify; color: var(--text); line-height: 1.55; }
+        
+        /* Grid Layout for Skills */
+        .skills-box { font-size: 13.5px; display: table; width: 100%; }
+        .skill-row { display: table-row; }
+        .skill-label { display: table-cell; width: 180px; font-weight: 700; color: var(--primary); padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
+        .skill-values { display: table-cell; color: var(--text); padding: 5px 0; border-bottom: 1px solid #f1f5f9; }
+        
+        /* Experience Formatting */
+        .job-wrapper { margin-bottom: 16px; page-break-inside: avoid; }
+        .job-main-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 14.5px; color: var(--primary); }
+        .job-sub-header { display: flex; justify-content: space-between; font-style: italic; font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 5px; }
+        
+        .bullets { padding-left: 18px; font-size: 13.5px; color: var(--text); }
+        .bullets li { margin-bottom: 4px; text-align: justify; line-height: 1.5; }
+        .bullets li b { color: var(--primary); }
+        
+        .metric-badge { font-weight: 700; color: var(--accent); background: #eff6ff; padding: 1px 4px; border-radius: 3px; }
+
+        /* Print Settings for Strict 2-Page Scale */
+        @media print {
+            body { background: none; padding: 0; color: #000; }
+            .resume-container { box-shadow: none; padding: 15px 30px; max-width: 100%; margin: 0; }
+            .metric-badge { background: none; padding: 0; font-weight: 800; text-decoration: underline; }
+            section { page-break-inside: auto; }
+            .job-wrapper { page-break-inside: avoid; }
+            @page { margin: 0.85cm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header>
+            <h1>Dinesh Pachiappan</h1>
+            <div class="subtitle">Senior Web Developer & Backend Engineer</div>
+            <div class="contact-grid">
+                <span>📍 Salem, Tamil Nadu</span>
+                <span>📞 +91 8270699892</span>
+                <span>✉️ p.dinesh.career@gmail.com</span>
+                <span>🌐 dineshpcode-pnd.github.io</span>
+            </div>
+        </header>
+
+        <!-- Profile Summary -->
+        <section>
+            <h2>Professional Profile</h2>
+            <p class="summary-text">
+                Performance-driven <b>Senior Web Developer</b> with <b>5 years and 6 months</b> of validated expertise engineering robust backend systems, modular ERP frameworks, and high-velocity business applications. Highly specialized in the <b>PHP/Laravel</b> ecosystem and complex data architecture scaling. Expert at isolating infrastructure operational lag, demonstrated by a metrics-backed <span class="metric-badge">95% database load reduction</span>—compressing raw query times from 40s to 2s across 15+ live transactional systems.
+            </p>
+        </section>
+
+        <!-- Core Skills Table Structure -->
+        <section>
+            <h2>Technical Core Ecosystem</h2>
+            <div class="skills-box">
+                <div class="skill-row">
+                    <span class="skill-label">Backend Architecture</span>
+                    <span class="skill-values">PHP (Core & Advanced), Laravel Framework, RESTful API Engineering, JWT Authentication Layer</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Data & Performance</span>
+                    <span class="skill-values">MySQL Relational DB, Redis Memory Cache, Advanced SQL Indexing, Schema Optimization</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">DevOps & Servers</span>
+                    <span class="skill-values">VPS Management, Deployment Workflows, Cloudflare Security, DNS Mapping, SSL Management, Git</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">UI Engineering</span>
+                    <span class="skill-values">JavaScript (ES6+), jQuery Engine, Bootstrap 5 UI, Semantics HTML5, Custom Layout CSS3</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill-label">Integrations & Tools</span>
+                    <span class="skill-values">Razorpay Gateway, PhonePe API, Shiprocket Logistics, Zoho Webhooks, Firebase, Postman Client</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional History -->
+        <section>
+            <h2>Professional History</h2>
+            
+            <!-- Company 1 -->
+            <div class="job-wrapper">
+                <div class="job-main-header">
+                    <span>Muviereck Technologies Pvt. Ltd.</span>
+                    <span>Jan 2023 – Present</span>
+                </div>
+                <div class="job-sub-header">
+                    <span>Senior Web Developer</span>
+                    <span>Salem, TN</span>
+                </div>
+                <ul class="bullets">
+                    <li><b>Enterprise E-Commerce Scaling:</b> Architecting core backend operations for 15+ high-volume commercial ecosystems with automated inventory state synchronization.</li>
+                    <li><b>Database Performance Tuning:</b> Engineered complex query refactoring and table schema optimizations, securing a documented <span class="metric-badge">95% speed up</span> from 40s to 2s processing times.</li>
+                    <li><b>Stateless Microservices:</b> Constructed protected distributed API structures backed by secure stateless JSON Web Tokens (JWT) for companion mobile client sync.</li>
+                    <li><b>Production Operations:</b> Directing complete system launches on enterprise standalone VPS configurations, implementing proxy rules, edge routing, and threat rules using Cloudflare firewall.</li>
+                    <li><b>Automation Engineering:</b> Established Background Task Automation pipelines deploying internal Redis Queues and automated systemic Cron Jobs for continuous operational execution.</li>
+                    <li><b>Technical Leadership:</b> Leading structural peer reviews, maintaining validation criteria, and mentoring junior engineers on clean-code patterns.</li>
+                </ul>
+            </div>
+
+            <!-- Company 2 -->
+            <div class="job-wrapper">
+                <div class="job-main-header">
+                    <span>Foliage Technologies</span>
+                    <span>Jan 2021 – Jan 2023</span>
+                </div>
+                <div class="job-sub-header">
+                    <span>Web Developer</span>
+                    <span>Salem, TN</span>
+                </div>
+                <ul class="bullets">
+                    <li><b>Full-Stack Development:</b> Programmed responsive dynamic applications utilizing custom Core PHP frameworks coupled with highly efficient normalized relational databases.</li>
+                    <li><b>Transaction Systems:</b> Integrated logistics delivery flows through Shiprocket Webhooks alongside complex financial multi-split payment operations.</li>
+                    <li><b>Business Dashboards:</b> Developed 5+ advanced administrative system panel variations, ensuring asynchronous UI components synced with central data structures.</li>
+                    <li><b>Legacy Code Migration:</b> Refactored outdated database dependencies into optimized object-oriented layers, enhancing application response speeds across early business deployments.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Selected Project Portfolios -->
+        <section>
+            <h2>Strategic Deliverables Portfolio</h2>
+            <ul class="bullets">
+                <li><b>Premium Jewellery E-Commerce Hubs:</b> Managed asset-heavy online storefront applications running optimized item matrix tables and multi-tier filter parameters.</li>
+                <li><b>Marine Logistics Job Portal:</b> Designed a failure-proof professional placement network with lightning-fast reactive filtering algorithms handling huge sets without deadlocks.</li>
+                <li><b>Asynchronous Evaluation Platforms:</b> Built real-time concurrency tracking models logging high-velocity examination metrics smoothly during peak concurrent traffic spikes.</li>
+                <li><b>Custom Enterprise ERP & CRM Software:</b> Formulated automated background CRON billing engines and custom multi-tenant tracking platforms configured with secure webhooks for real-time customer data updates.</li>
+            </ul>
+        </section>
+
+        <!-- Advanced Systems Engineering -->
+        <section>
+            <h2>Key Architectural Methodologies</h2>
+            <ul class="bullets">
+                <li><b>Software Architecture & Patterns:</b> Monolithic to Microservices System Migration, Object-Oriented Programming (OOP), SOLID Principles, MVC Architecture Patterns.</li>
+                <li><b>Enterprise Security Standards:</b> OWASP Top 10 Core Vulnerability Mitigation, Strict Input Validation Layers, Secure Token Handling, SQL Injection Defense Frameworks.</li>
+                <li><b>Agile Workflows & QA:</b> Scrum Operations, Version Control Workflows (Gitflow Branching Models), Continuous Deployment Concepts, Technical System Documentation.</li>
+            </ul>
+        </section>
+
+        <!-- Engineering Principles & Paradigms -->
+        <section>
+            <h2>System Design & Engineering Paradigms</h2>
+            <ul class="bullets">
+                <li><b>High-Availability Design:</b> Engineered robust backend frameworks using Redis distributed caching and caching layers to minimize heavy computational database overheads.</li>
+                <li><b>Performance Auditing:</b> Experienced in query execution path mapping utilizing database tools (such as EXPLAIN statements) to eliminate structural table scanning issues.</li>
+                <li><b>API Best Practices:</b> Enforcing strict error handling, comprehensive HTTP status mapping, clear JSON responses, and technical documentation via Postman environments.</li>
+            </ul>
+        </section>
+
+        <!-- Academic Foundation -->
+        <section style="margin-bottom: 0;">
+            <h2>Education</h2>
+            <div class="job-main-header" style="font-size: 14px;">
+                <span>Muthayammal College of Engineering</span>
+                <span>2016 – 2020</span>
+            </div>
+            <div style="font-size: 13px; color: var(--muted); font-weight: 500; margin-top: 3px;">Bachelor of Engineering (B.E.) — Electronics and Communication Engineering</div>
+        </section>
+
+    </div>
+
+</body>
+</html>
