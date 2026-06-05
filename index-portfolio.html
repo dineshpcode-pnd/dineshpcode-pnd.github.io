@@ -3,54 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpeg">
-    
-    <!-- Primary SEO Meta Tags (Cleaned Double Title Bug) -->
+    <title>Dinesh Pachiappan | Senior Web Developer Architect</title>
+    <!-- SEO Meta Tags -->
     <title>Dinesh Pachiappan | Senior Backend Engineer & Laravel Expert</title>
-    <meta name="description" content="Dinesh Pachiappan is a Senior Backend Engineer with 5.5+ years of production experience specializing in PHP, Laravel, and Database Performance Tuning. Expert in optimizing high-concurrency systems.">
-    <meta name="keywords" content="Dinesh Pachiappan, Senior Backend Engineer, Laravel Developer India, PHP Performance Tuning, Database Optimization Expert, Remote Backend Developer, Full Time Developer">
-    <meta name="author" content="Dinesh Pachiappan">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://dineshpcode-pnd.github.io/">
+    <meta name="description" content="Dinesh Pachiappan is a Senior Backend Engineer with 5.5+ years of experience specializing in PHP, Laravel, and Database Performance Tuning. Available for freelance architecture and scaling.">
+    <meta name="keywords" content="Dinesh Pachiappan, Senior Backend Engineer, Laravel Developer India, Freelance PHP Developer, Database Optimization Expert, Remote Backend Developer">
 
-    <!-- Open Graph / Facebook / LinkedIn (Social SEO) -->
-    <meta property="og:type" content="profile">
-    <meta property="og:title" content="Dinesh Pachiappan | Senior Backend Engineer & Performance Architect">
-    <meta property="og:description" content="Optimizing database loads by 95% and building high-concurrency applications. Available for full-time enterprise roles.">
-    <meta property="og:image" content="https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpeg">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dinesh Pachiappan | Senior Backend Engineer">
+    <meta property="og:description" content="Optimizing database loads by 95% and building high-concurrency applications.">
+    <meta property="og:image" content="https://dineshpcode-pnd.github.io/og-image.png">
     <meta property="og:url" content="https://dineshpcode-pnd.github.io/">
-    <meta property="og:site_name" content="Dinesh Pachiappan Portfolio">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dinesh Pachiappan | Senior Backend Engineer">
-    <meta name="twitter:description" content="Optimizing database loads from 40s to 2s. Specialized in Laravel, Redis, and Linux VPS infrastructure.">
-    <meta name="twitter:image" content="https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpeg">
-
-    <!-- Google Structured Data / Schema Markup (Person Schema for Full-Time Professionals) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Dinesh Pachiappan",
-      "image": "https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpeg",
-      "url": "https://dineshpcode-pnd.github.io/",
-      "jobTitle": "Senior Backend Engineer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Salem",
-        "addressRegion": "Tamil Nadu",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://github.com/dineshpcode-pnd"
-      ],
-      "knowsAbout": ["PHP", "Laravel", "MySQL Optimization", "Redis Caching", "API Security", "VPS Cloud Architecture"]
-    }
-    </script>
-
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root { 
@@ -89,7 +52,7 @@
         .hero-desc { max-width: 650px; color: var(--text-muted); font-size: clamp(1rem, 3vw, 1.2rem); margin-bottom: 40px; font-weight: 300; padding: 0 15px; }
         .hero-action-group { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 
-        /* Dynamic Stats Grid */
+        /* Dynamic Stats Grid - Structural Fixes for Tablets/Mobile */
         .stats-grid { display: flex; gap: 30px; margin-top: 60px; background: rgba(255,255,255,0.02); padding: 25px 45px; border-radius: 24px; border: 1px solid var(--border); backdrop-filter: blur(10px); flex-wrap: wrap; justify-content: center; width: 100%; max-width: 800px; }
         .stat-card { text-align: center; min-width: 180px; flex: 1; padding: 10px; }
         .stat-num { font-size: clamp(2rem, 5vw, 2.6rem); font-weight: 800; color: #fff; display: block; }
@@ -101,7 +64,7 @@
         .section-title { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 800; margin-bottom: 50px; position: relative; letter-spacing: -1px; text-align: left; }
         .section-title span { color: var(--primary); }
         
-        /* Grid Architect */
+        /* Grid Architect - Pure Mobile-Responsive Engine */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px; }
         .card { background: var(--card-bg); border: 1px solid var(--border); padding: clamp(20px, 4vw, 35px); border-radius: 24px; transition: 0.4s; backdrop-filter: blur(5px); display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { border-color: rgba(0, 242, 254, 0.4); transform: translateY(-5px); background: rgba(21, 30, 50, 0.8); }
@@ -133,7 +96,7 @@
         }
         @media (max-width: 768px) {
             nav { padding: 15px 5%; }
-            .nav-links a:not(.btn-primary) { display: none; } 
+            .nav-links a:not(.btn-primary) { display: none; } /* Hide text links on mobile for absolute alignment */
             .section { padding: 60px 5% 30px; }
             .stats-grid { padding: 20px; gap: 15px; }
             .stat-card { min-width: 130px; }
@@ -154,10 +117,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Exactly matching image_8a7742.png design rules) -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-blur"></div>
-        <p class="tagline">Senior Backend Engineer & Performance Architect</p>
+        <p class="tagline">Backend Engineer & Performance Architect</p>
         <h1>Dinesh <span>Pachiappan</span></h1>
         <p class="hero-desc">Building high-concurrency enterprise ecosystems, scaling secure API infrastructure, and optimizing data retrieval systems for modern web applications.</p>
         
@@ -247,7 +210,7 @@
         </div>
     </section>
 
-    <!-- Detailed Project Deployments -->
+    <!-- Detailed Project Deployments - Expanded to 6 Balanced Premium Cards -->
     <section class="section" id="projects">
         <h2 class="section-title">Key Production <span>Deployments</span></h2>
         <div class="grid">
@@ -338,7 +301,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 Dinesh Pachiappan. Built with 100% Core SEO Compliance Standards.</p>
+            <p>&copy; 2026 Dinesh Pachiappan. Built with 99% Precision Standards for All Display Sizes.</p>
         </div>
     </footer>
 
