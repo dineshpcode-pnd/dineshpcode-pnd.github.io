@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpg">
+    
+    <!-- SEO Meta Tags -->
+    <title>Backend Architecture & Optimization Case Studies | Dinesh Pachiappan</title>
+    <meta name="description" content="In-depth technical case studies on Legacy Query Optimization, Job Portal SEO Refactoring, and Cloudflare Security & Bot Management by Dinesh Pachiappan.">
+    <meta name="keywords" content="Dinesh Pachiappan Case Studies, PHP Query Optimization, Job Portal SEO Architecture, Cloudflare Bot Mitigation, Senior Backend Engineer Salem">
+    <meta name="author" content="Dinesh Pachiappan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dineshpcode-pnd.github.io/case-studies.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Backend Architecture & Optimization Case Studies | Dinesh Pachiappan">
+    <meta property="og:description" content="Real-world case studies detailing how legacy SQL queries were tuned, Job Portal SEO was restructured, and server security was hardened.">
+    <meta property="og:image" content="https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpg">
+    <meta property="og:url" content="https://dineshpcode-pnd.github.io/case-studies.html">
+
+    <!-- Google Structured Data (TechArticle Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Engineering Case Studies in Backend Tuning, Technical SEO, and Server Security",
+      "author": {
+        "@type": "Person",
+        "name": "Dinesh Pachiappan"
+      },
+      "description": "Technical analysis of query optimization, AJAX to SSR crawlability, and Cloudflare security management."
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #030712; 
+            --card-bg: rgba(17, 24, 39, 0.7); 
+            --primary: #00f2fe; 
+            --secondary: #4facfe; 
+            --text: #f3f4f6; 
+            --text-muted: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent-green: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(3, 7, 18, 0.9); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+        .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -1px; color: var(--text); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        
+        /* Buttons */
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #000; padding: 10px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; display: inline-block; border: none; cursor: pointer; text-align: center; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3); }
+
+        /* Case Studies Hero Header */
+        .cs-hero { padding: 140px 8% 40px; text-align: center; position: relative; }
+        .cs-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
+        .cs-hero h1 span { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .cs-hero p { max-width: 700px; margin: 0 auto; color: var(--text-muted); font-size: 1.1rem; }
+
+        /* Container Section */
+        .section { padding: 40px 8% 80px; max-width: 1200px; margin: 0 auto; }
+
+        /* Case Study Card Layout */
+        .cs-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: clamp(25px, 4vw, 40px); margin-bottom: 40px; backdrop-filter: blur(8px); transition: 0.3s; }
+        .cs-card:hover { border-color: rgba(0, 242, 254, 0.3); transform: translateY(-3px); }
+        
+        .cs-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .cs-badge { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); background: rgba(0, 242, 254, 0.1); padding: 6px 14px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; }
+        .cs-title { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800; margin-top: 10px; color: #fff; }
+        
+        /* Grid inside Case Study */
+        .cs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        .cs-box { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); padding: 20px; border-radius: 16px; }
+        .cs-box h4 { font-size: 1rem; color: var(--primary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .cs-box ul { list-style: none; padding-left: 0; }
+        .cs-box ul li { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 8px; position: relative; padding-left: 18px; }
+        .cs-box ul li::before { content: "▹"; position: absolute; left: 0; color: var(--primary); }
+
+        /* Metrics Box */
+        .cs-metrics { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); padding: 20px; border-radius: 16px; margin-top: 25px; }
+        .cs-metrics h4 { color: var(--accent-green); font-size: 1rem; margin-bottom: 10px; font-weight: 700; }
+        
+        .p-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .p-tag { font-size: 0.75rem; background: rgba(79, 172, 254, 0.1); color: var(--secondary); padding: 5px 12px; border-radius: 8px; font-weight: 600; }
+
+        /* Footer */
+        footer { background: #010409; border-top: 1px solid var(--border); padding: 50px 5% 30px; text-align: center; }
+        .copyright { font-size: 0.85rem; color: #4b5563; }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 5%; }
+            .nav-links a:not(.btn-primary) { display: none; }
+            .cs-hero { padding-top: 110px; }
+        }
+    </style>
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0G2HZHCX6"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L0G2HZHCX6');
+    </script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <a href="index.html" class="logo">DINESH<span>.P</span></a>
+        <div class="nav-links">
+            <a href="index.html#expertise">Expertise</a>
+            <a href="index.html#skills">Tech Stack</a>
+            <a href="index.html#projects">Deployments</a>
+            <a href="case-studies.html" class="active">Case Studies</a>
+            <a href="Dinesh_Pachiappan_Senior_Backend_Engineer.pdf" download class="btn-primary" style="color: #000; margin-left: 20px;">Download CV</a>
+        </div>
+    </nav>
+
+    <!-- Case Studies Hero Header -->
+    <section class="cs-hero">
+        <h1>Engineering <span>Case Studies</span></h1>
+        <p>In-depth breakdowns of real-world backend bottleneck resolution, high-traffic SEO architecture refactoring, and cloud infrastructure security.</p>
+    </section>
+
+    <!-- Case Studies List -->
+    <section class="section">
+
+        <!-- Case Study 1 -->
+        <div class="cs-card">
+            <div class="cs-header">
+                <div>
+                    <span class="cs-badge">Database & Backend Tuning</span>
+                    <h2 class="cs-title">01. Legacy PHP Query Refactoring & Latency Optimization</h2>
+                </div>
+            </div>
+
+            <div class="cs-grid">
+                <div class="cs-box">
+                    <h4>🚨 The Bottleneck & Challenge</h4>
+                    <ul>
+                        <li>Legacy Core PHP applications experienced heavy database locking and slow response times due to unindexed `FULL JOIN` queries.</li>
+                        <li>Over-fetching unneeded columns (`SELECT *`) across huge tables caused massive memory bloat and API latency spikes.</li>
+                        <li>Search filters failed under peak concurrent loads due to inefficient conditional evaluation sequences.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-box">
+                    <h4>🛠 Technical Solution & Execution</h4>
+                    <ul>
+                        <li>Re-engineered SQL logic: Removed unneeded `FULL JOIN`s, replaced with lean conditional queries and CTEs (Common Table Expressions).</li>
+                        <li>Implemented selective column fetching and created multi-column B-Tree indexes targeted for dynamic search terms.</li>
+                        <li>Separated heavy analytical filtering into asynchronous execution routines to prevent blocking critical web requests.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-metrics">
+                <h4>📈 Measurable Business Impact</h4>
+                <ul>
+                    <li>Reduced complex query response time from **12+ seconds down to under 300ms**.</li>
+                    <li>Lowered overall database CPU utilization by over **65%** during high traffic hours.</li>
+                    <li>Eliminated database deadlocks and timeout bugs across legacy user management modules.</li>
+                </ul>
+            </div>
+
+            <div class="p-tags">
+                <span class="p-tag">Core PHP</span>
+                <span class="p-tag">MySQL Indexing</span>
+                <span class="p-tag">Query Profiling</span>
+                <span class="p-tag">CTE & Subqueries</span>
+                <span class="p-tag">Async Execution</span>
+            </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="cs-card">
+            <div class="cs-header">
+                <div>
+                    <span class="cs-badge">Technical SEO & Web Architecture</span>
+                    <h2 class="cs-title">02. High-Volume Job Portal SEO & AJAX Crawlability Restructure</h2>
+                </div>
+            </div>
+
+            <div class="cs-grid">
+                <div class="cs-box">
+                    <h4>🚨 The Bottleneck & Challenge</h4>
+                    <ul>
+                        <li>Dynamic Job listings and paginated results loaded purely via Client-Side AJAX appending, leaving thousands of job pages unindexed by Google.</li>
+                        <li>Dynamic filter URLs were non-standard, making it impossible for search crawlers to discover sub-categories.</li>
+                        <li>Unoptimized image assets and render-blocking CSS/JS files resulted in poor Core Web Vitals scores.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-box">
+                    <h4>🛠 Technical Solution & Execution</h4>
+                    <ul>
+                        <li>Restructured the architecture to render SEO-friendly clean URLs with URL rewrite rules for all job categories and dynamic pagination.</li>
+                        <li>Integrated hybrid rendering: SSR (Server-Side Rendering) for initial bot requests + AJAX for seamless user filtering.</li>
+                        <li>Implemented dynamic Meta/Schema tags per job listing, lazy loading for images, and minified CSS/JS pipelines to fix render blocks.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-metrics">
+                <h4>📈 Measurable Business Impact</h4>
+                <ul>
+                    <li>Increased Google search indexation coverage by **300%+** within 4 weeks.</li>
+                    <li>Improved overall PageSpeed performance score from **38 to 90+** on mobile/desktop devices.</li>
+                    <li>Boosted organic search traffic and candidate application rates through long-tail job keywords.</li>
+                </ul>
+            </div>
+
+            <div class="p-tags">
+                <span class="p-tag">Technical SEO</span>
+                <span class="p-tag">URL Rewriting</span>
+                <span class="p-tag">On-Page Optimization</span>
+                <span class="p-tag">Core Web Vitals</span>
+                <span class="p-tag">Dynamic Meta Architecture</span>
+            </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="cs-card">
+            <div class="cs-header">
+                <div>
+                    <span class="cs-badge">DevOps & Cloud Security</span>
+                    <h2 class="cs-title">03. Cloudflare Security Shield, Bot Mitigation & Server Hardening</h2>
+                </div>
+            </div>
+
+            <div class="cs-grid">
+                <div class="cs-box">
+                    <h4>🚨 The Bottleneck & Challenge</h4>
+                    <ul>
+                        <li>Unusual traffic surges and malicious scraping bots depleted server resources and slowed down genuine user requests.</li>
+                        <li>Incorrect directory permissions on host VPS posed security risks and file execution vulnerabilities.</li>
+                        <li>Lack of firewall rules led to spam requests consuming digital marketing campaign budget analytics.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-box">
+                    <h4>🛠 Technical Solution & Execution</h4>
+                    <ul>
+                        <li>Configured Cloudflare WAF (Web Application Firewall) & Bot Management rules to whitelist verified crawlers (Google, Meta) while challenging unknown traffic.</li>
+                        <li>Analyzed Cloudflare & Nginx access logs alongside QA and Marketing teams to pinpoint automated attack vectors.</li>
+                        <li>Hardened file/directory permission matrices (`755` for directories, `644` for files) and blocked unauthorized execution in uploads folders.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-metrics">
+                <h4>📈 Measurable Business Impact</h4>
+                <ul>
+                    <li>Blocked over **99% of malicious bot traffic**, reducing unwanted bandwidth usage drastically.</li>
+                    <li>Achieved 99.9% server uptime with consistent operational stability during high-volume marketing campaigns.</li>
+                    <li>Secured critical file assets and eliminated vulnerability vectors without impacting legitimate Google indexing bots.</li>
+                </ul>
+            </div>
+
+            <div class="p-tags">
+                <span class="p-tag">Cloudflare WAF</span>
+                <span class="p-tag">Bot Mitigation</span>
+                <span class="p-tag">Nginx Log Analysis</span>
+                <span class="p-tag">VPS Hardening</span>
+                <span class="p-tag">Security Permissions</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2026 Dinesh Pachiappan. Built with Core SEO Compliance Standards.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
