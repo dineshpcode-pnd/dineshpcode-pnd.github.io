@@ -136,35 +136,13 @@
         @media (max-width: 1024px) {
             .section { padding: 80px 6% 40px; }
         }
-       /* 100% Mobile & Tablet Precision Media Queries */
-        @media (max-width: 1024px) {
-            .section { padding: 80px 6% 40px; }
-        }
         @media (max-width: 768px) {
-            nav { padding: 15px 5%; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
-            
-            /* Hamburger Button Styling */
-            .mobile-menu-btn { display: flex; flex-direction: column; justify-content: space-between; width: 26px; height: 18px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
-            .mobile-menu-btn .bar { width: 100%; height: 2px; background-color: var(--text); border-radius: 2px; transition: 0.3s ease; }
-            
-            /* Hamburger Animation to 'X' */
-            .mobile-menu-btn.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--primary); }
-            .mobile-menu-btn.active .bar:nth-child(2) { opacity: 0; }
-            .mobile-menu-btn.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--primary); }
-
-            /* Mobile Dropdown Navigation Menu Drawer */
-            .nav-links { display: flex !important; flex-direction: column; position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px; height: 100vh; background: rgba(3, 7, 18, 0.98); backdrop-filter: blur(20px); border-left: 1px solid var(--border); padding: 90px 30px 40px; transition: 0.4s ease-in-out; z-index: 999; box-shadow: -10px 0 30px rgba(0,0,0,0.8); }
-            .nav-links.active { right: 0; }
-            .nav-links a { margin: 15px 0 !important; font-size: 1.1rem; width: 100%; text-align: left; }
-            .nav-cv-btn { margin-left: 0 !important; margin-top: 15px !important; color: #000 !important; text-align: center !important; }
-
+            nav { padding: 15px 5%; }
+            .nav-links a:not(.btn-primary) { display: none; } 
             .section { padding: 60px 5% 30px; }
             .stats-grid { padding: 20px; gap: 15px; }
             .stat-card { min-width: 130px; }
             .contact-details-box { flex-direction: column; gap: 12px; align-items: center; }
-        }
-        @media (min-width: 769px) {
-            .mobile-menu-btn { display: none; }
         }
     </style>
 
@@ -183,23 +161,15 @@
 </head>
 <body>
 
-   <!-- Header Navigation -->
+    <!-- Header Navigation -->
     <nav>
-        <a href="index.html" class="logo" style="text-decoration: none; color: var(--text);">DINESH<span>.P</span></a>
-        
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <div class="nav-links" id="navMenu">
+        <div class="logo">DINESH<span>.P</span></div>
+        <div class="nav-links">
             <a href="#expertise">Expertise</a>
             <a href="#skills">Tech Stack</a>
             <a href="#projects">Deployments</a>
             <a href="case-studies.html">Case Studies</a>
-            <a href="Dinesh_Pachiappan_Senior_Backend_Engineer.pdf" download class="btn-primary nav-cv-btn" style="color: #000;">Download CV</a>
+            <a href="Dinesh_Pachiappan_Senior_Backend_Engineer.pdf" download class="btn-primary" style="color: #000; margin-left: 20px;">Download CV</a>
         </div>
     </nav>
 
@@ -400,26 +370,5 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        if (menuToggle && navMenu) {
-            menuToggle.addEventListener('click', () => {
-                menuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-
-            // Close menu when a link inside is clicked
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-        }
-    </script>
-</body>
 </body>
 </html>

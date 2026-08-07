@@ -9,8 +9,8 @@
     
     <!-- SEO Meta Tags -->
     <title>Backend Architecture & Optimization Case Studies | Dinesh Pachiappan</title>
-    <meta name="description" content="In-depth technical case studies on Legacy Query Optimization, Job Portal SEO Refactoring, and Cloudflare Security & Bot Management by Dinesh Pachiappan.">
-    <meta name="keywords" content="Dinesh Pachiappan Case Studies, PHP Query Optimization, Job Portal SEO Architecture, Cloudflare Bot Mitigation, Senior Backend Engineer Salem">
+    <meta name="description" content="In-depth technical case studies on Legacy Query Optimization, Job Portal SEO Refactoring, Cloudflare Security, and Infrastructure Incident RCA by Dinesh Pachiappan.">
+    <meta name="keywords" content="Dinesh Pachiappan Case Studies, PHP Query Optimization, Job Portal SEO Architecture, Cloudflare Bot Mitigation, Incident RCA Security, Senior Backend Engineer Salem">
     <meta name="author" content="Dinesh Pachiappan">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dineshpcode-pnd.github.io/case-studies.html">
@@ -18,7 +18,7 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="Backend Architecture & Optimization Case Studies | Dinesh Pachiappan">
-    <meta property="og:description" content="Real-world case studies detailing how legacy SQL queries were tuned, Job Portal SEO was restructured, and server security was hardened.">
+    <meta property="og:description" content="Real-world case studies detailing how legacy SQL queries were tuned, Job Portal SEO was restructured, server security was hardened, and RCA incidents were resolved.">
     <meta property="og:image" content="https://dineshpcode-pnd.github.io/Dinesh-Pachiappan-Senior-Backend-Engineer.jpg">
     <meta property="og:url" content="https://dineshpcode-pnd.github.io/case-studies.html">
 
@@ -27,12 +27,12 @@
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "Engineering Case Studies in Backend Tuning, Technical SEO, and Server Security",
+      "headline": "Engineering Case Studies in Backend Tuning, Technical SEO, Server Security, and Incident RCA",
       "author": {
         "@type": "Person",
         "name": "Dinesh Pachiappan"
       },
-      "description": "Technical analysis of query optimization, AJAX to SSR crawlability, and Cloudflare security management."
+      "description": "Technical analysis of query optimization, AJAX to SSR crawlability, Cloudflare security management, and Incident Response Root Cause Analysis."
     }
     </script>
 
@@ -100,10 +100,28 @@
         footer { background: #010409; border-top: 1px solid var(--border); padding: 50px 5% 30px; text-align: center; }
         .copyright { font-size: 0.85rem; color: #4b5563; }
 
-        @media (max-width: 768px) {
-            nav { padding: 15px 5%; }
-            .nav-links a:not(.btn-primary) { display: none; }
+      @media (max-width: 768px) {
+            nav { padding: 15px 5%; position: fixed; width: 100%; top: 0; left: 0; z-index: 1000; }
+            
+            /* Hamburger Button Styling */
+            .mobile-menu-btn { display: flex; flex-direction: column; justify-content: space-between; width: 26px; height: 18px; background: transparent; border: none; cursor: pointer; padding: 0; z-index: 1001; }
+            .mobile-menu-btn .bar { width: 100%; height: 2px; background-color: var(--text); border-radius: 2px; transition: 0.3s ease; }
+            
+            /* Hamburger Animation to 'X' */
+            .mobile-menu-btn.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--primary); }
+            .mobile-menu-btn.active .bar:nth-child(2) { opacity: 0; }
+            .mobile-menu-btn.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--primary); }
+
+            /* Mobile Dropdown Navigation Menu Drawer */
+            .nav-links { display: flex !important; flex-direction: column; position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px; height: 100vh; background: rgba(3, 7, 18, 0.98); backdrop-filter: blur(20px); border-left: 1px solid var(--border); padding: 90px 30px 40px; transition: 0.4s ease-in-out; z-index: 999; box-shadow: -10px 0 30px rgba(0,0,0,0.8); }
+            .nav-links.active { right: 0; }
+            .nav-links a { margin: 15px 0 !important; font-size: 1.1rem; width: 100%; text-align: left; }
+            .nav-cv-btn { margin-left: 0 !important; margin-top: 15px !important; color: #000 !important; text-align: center !important; }
+
             .cs-hero { padding-top: 110px; }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu-btn { display: none; }
         }
     </style>
 
@@ -118,15 +136,24 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+   <!-- Header Navigation -->
     <nav>
-        <a href="index.html" class="logo">DINESH<span>.P</span></a>
-        <div class="nav-links">
+        <a href="index.html" class="logo" style="text-decoration: none; color: var(--text);">DINESH<span>.P</span></a>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-links" id="navMenu">
+            <a href="index.html">← Back to Home</a>
             <a href="index.html#expertise">Expertise</a>
             <a href="index.html#skills">Tech Stack</a>
             <a href="index.html#projects">Deployments</a>
             <a href="case-studies.html" class="active">Case Studies</a>
-            <a href="Dinesh_Pachiappan_Senior_Backend_Engineer.pdf" download class="btn-primary" style="color: #000; margin-left: 20px;">Download CV</a>
+            <a href="Dinesh_Pachiappan_Senior_Backend_Engineer.pdf" download class="btn-primary nav-cv-btn" style="color: #000;">Download CV</a>
         </div>
     </nav>
 
@@ -280,6 +307,55 @@
             </div>
         </div>
 
+        <!-- Case Study 4: Infrastructure Incident Response & RCA Mitigation -->
+        <div class="cs-card">
+            <div class="cs-header">
+                <div>
+                    <span class="cs-badge">Infrastructure Security & Incident Response</span>
+                    <h2 class="cs-title">04. Cloud Infrastructure Abuse Flag Mitigation & Root Cause Analysis (RCA)</h2>
+                </div>
+            </div>
+
+            <div class="cs-grid">
+                <div class="cs-box">
+                    <h4>🚨 The Bottleneck & Challenge</h4>
+                    <ul>
+                        <li>Automated external security crawlers flagged a public staging subdomain (`messaging-api.staging-environment.com`) for automated trademark keyword classification.</li>
+                        <li>Received an immediate automated Abuse Flag notification from the cloud host with a potential risk of staging environment suspension.</li>
+                        <li>Required rapid containment, root-cause verification, and official technical reporting to prevent cloud service disruption.</li>
+                    </ul>
+                </div>
+
+                <div class="cs-box">
+                    <h4>🛠 Technical Solution & Execution</h4>
+                    <ul>
+                        <li><strong>Immediate Containment:</strong> Purged affected web server staging directories and flushed Cloudflare DNS routing within minutes of notification.</li>
+                        <li><strong>Multi-Engine Code Audit:</strong> Executed static file analysis and multi-engine antivirus scans (40+ engines) on VirusTotal, confirming zero webshells, backdoors, or malicious scripts (100% Clean Code base).</li>
+                        <li><strong>Server Log Inspection:</strong> Audited web server access/error logs to confirm zero unauthorized SSH access, privilege escalation, or data exfiltration attempts.</li>
+                        <li><strong>Formal RCA & Resolution:</strong> Authored an official Root Cause Analysis (RCA) report proving a False Positive / Brand Protection keyword trigger and coordinated with Trust & Safety teams to successfully close the ticket.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-metrics">
+                <h4>📈 Measurable Business Impact</h4>
+                <ul>
+                    <li><strong>100% Server Integrity Verified:</strong> Proved zero technical breach or code compromise across cloud infrastructure.</li>
+                    <li><strong>100% Risk Mitigation:</strong> Successfully resolved abuse notice without server downtime or hosting service suspension.</li>
+                    <li><strong>Policy Implementation:</strong> Established strict domain-naming guidelines prohibiting direct trademarked strings in public staging subdomains (e.g., migrating to neutral strings like `wa-api.staging.com`).</li>
+                </ul>
+            </div>
+
+            <div class="p-tags">
+                <span class="p-tag">Incident Response</span>
+                <span class="p-tag">Root Cause Analysis (RCA)</span>
+                <span class="p-tag">VirusTotal Static Analysis</span>
+                <span class="p-tag">Cloud Firewall & DNS Flushes</span>
+                <span class="p-tag">Server Log Auditing</span>
+                <span class="p-tag">Trust & Safety Coordination</span>
+            </div>
+        </div>
+
     </section>
 
     <!-- Footer -->
@@ -289,5 +365,24 @@
         </div>
     </footer>
 
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
